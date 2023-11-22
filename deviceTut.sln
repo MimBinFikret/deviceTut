@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbTestApp", "UsbTestApp\UsbTestApp.csproj", "{7C9892B2-3C44-4631-8B73-A9C866ACFCFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderTalkerPrimal", "ReaderTalkerPrimal\ReaderTalkerPrimal.csproj", "{BC7E9571-EF75-4B67-8233-B4B451CD01DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7C9892B2-3C44-4631-8B73-A9C866ACFCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C9892B2-3C44-4631-8B73-A9C866ACFCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C9892B2-3C44-4631-8B73-A9C866ACFCFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7E9571-EF75-4B67-8233-B4B451CD01DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7E9571-EF75-4B67-8233-B4B451CD01DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7E9571-EF75-4B67-8233-B4B451CD01DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7E9571-EF75-4B67-8233-B4B451CD01DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
