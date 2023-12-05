@@ -66,20 +66,21 @@ class Program
                 {
                     Console.WriteLine("Okuyucuya başarıyla bağlandı.");
 
-                    // Kart bilgilerini oku (örneğin, ATR - Answer To Reset)
-                    byte[] atr = new byte[32];
-                    uint atrSize = (uint)atr.Length;
+                    // Yeni APDU oluştur ve kartla iletişim kur
+                    byte[] apduCommand = { 0xA0, 0xDA };
+                    byte[] responseBuffer = new byte[256];
+                    uint responseSize = (uint)responseBuffer.Length;
 
                     SCARD_IO_REQUEST ioRequest = new SCARD_IO_REQUEST { dwProtocol = activeProtocol, cbPciLength = (uint)Marshal.SizeOf(typeof(SCARD_IO_REQUEST)) };
-                    result = SCardTransmit(hCard, IntPtr.Zero, null, 0, IntPtr.Zero, atr, ref atrSize);
+                    result = SCardTransmit(hCard, IntPtr.Zero, apduCommand, (uint)apduCommand.Length, IntPtr.Zero, responseBuffer, ref responseSize);
 
                     if (result == 0)
                     {
-                        Console.WriteLine($"ATR (Answer To Reset): {BitConverter.ToString(atr, 0, (int)atrSize)}");
+                        Console.WriteLine($"Karttan gelen yanıt: {BitConverter.ToString(responseBuffer, 0, (int)responseSize)}");
                     }
                     else
                     {
-                        Console.WriteLine($"Kart bilgileri okunamadı. Hata Kodu: {result}");
+                        Console.WriteLine($"Kartla iletişim kurulamadı. Hata Kodu: {result}");
                     }
 
                     // Karttan ayrıl
