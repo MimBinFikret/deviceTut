@@ -67,7 +67,7 @@ class Program
                     Console.WriteLine("Okuyucuya başarıyla bağlandı.");
 
                     // Yeni APDU oluştur ve kartla iletişim kur
-                    byte[] apduCommand = { 0xA0, 0xDA };
+                    byte[] apduCommand = { 0x00, 0xA4, 0x04, 0x00, 0x00 };
                     byte[] responseBuffer = new byte[256];
                     uint responseSize = (uint)responseBuffer.Length;
 
